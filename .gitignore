@@ -1,2 +1,7 @@
 __pycache__/
+pyvenv.cfg
+Lib/
+Scripts
+include/
+myenv/
 # .gitignore
