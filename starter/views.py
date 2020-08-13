@@ -28,6 +28,9 @@ def home_view(request):
 def activation_sent_view(request):
     return render(request, 'registration/activation_sent.html')
 
+def logout_view(request):
+    return render(request, 'registration/logout.html')
+
 
 def activate(request, uidb64, token):
     try:
