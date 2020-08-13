@@ -7,8 +7,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
-#hi
-#Hello
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100, blank=True)
