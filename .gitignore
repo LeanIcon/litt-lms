@@ -1,2 +1,8 @@
 __pycache__/
+myenv/
+pyvenv.cfg
+Scripts/
+Include/
+Lib/
+db.sqlite3
 # .gitignore
