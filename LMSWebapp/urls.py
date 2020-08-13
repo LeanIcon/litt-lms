@@ -23,11 +23,12 @@ from starter import views
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from starter.views import signup_view, activate, activation_sent_view, logout_view, home_view
+from starter.views import signup_view, activate, activation_sent_view, logout_view, home_view, EntSignup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/signup/', signup_view, name="signup"),
+    path('accounts/company/', EntSignup, name="company"),
     path('accounts/sent/', activation_sent_view, name="activation_sent"),
     path('accounts/activate/<slug:uidb64>/<slug:token>/', activate, name='activate'),
     path('accounts/logout', logout_view, name="logout"), 
