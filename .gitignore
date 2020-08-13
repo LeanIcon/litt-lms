@@ -1,8 +1,7 @@
 __pycache__/
-myenv/
-pyvenv.cfg
-Scripts/
 Include/
 Lib/
-db.sqlite3
+Scripts/
+pyvenv.cfg
+
 # .gitignore

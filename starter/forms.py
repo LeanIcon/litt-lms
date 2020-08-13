@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 # from .forms import SignUpForm
 from django.shortcuts import render, redirect
+from .models import Profile
 
 # class SignUpForm(UserCreationForm):
 #     first_name = forms.CharField(max_length=100, help_text='Last Name')
 #     last_name = forms.CharField(max_length=100, help_text='Last Name')
 #     email = forms.EmailField(max_length=150, help_text='Email')
-
 #     class Meta:
 #         model = User
 #         fields = ('username', 'first_name', 'last_name',
@@ -31,7 +31,7 @@ class InputForm(forms.Form):
     password = forms.CharField(max_length=100, widget=forms.PasswordInput)
     confirm_password = forms.CharField(max_length=100, widget=forms.PasswordInput)
 
-
+# Individual
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=100, help_text='Last Name')
     last_name = forms.CharField(max_length=100, help_text='Last Name')
@@ -41,3 +41,18 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
+
+
+# Enterprise
+
+class EnterpriseReg(forms.ModelForm):
+    CompanyName = forms.CharField(max_length=100, help_text='Company Name')
+    location = forms.CharField(max_length=100, help_text='Location')
+    type_of_business = forms.CharField(max_length=150, help_text='Type of Business')
+    email = forms.EmailField(max_length=150, help_text='Email')
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = Profile
+        fields = ['CompanyName', 'location', 'type_of_business',
+                  'email', 'password']

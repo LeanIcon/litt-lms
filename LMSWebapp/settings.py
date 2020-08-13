@@ -157,9 +157,9 @@ ACCOUNT_ACTIVATION_DAYS = 3
 
 EMAIL_HOST = 'smtp.gmail.com'
 
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'dev.picotechnology@gmail.com'
 
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = '############'
 
 EMAIL_PORT = 587
 
@@ -167,3 +167,7 @@ EMAIL_USE_TLS = True
 
 # Email activation 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# TEST EMAIL SERVER
+# DEFUALT_FROM_EMAIL  = 'curtismensah48@gmail.com'
+
