@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Custom
     'starter',
     'registration',
+    'adminUpload.apps.AdminuploadConfig',
     # Third Party
     'crispy_forms',
 ]
@@ -142,9 +143,9 @@ LOGIN_REDIRECT_URL = "/home"
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
-MEDIA_ROOT = PROJECT_ROOT + '/static/'
+MEDIA_ROOT = PROJECT_ROOT + '\\static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '\\media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
