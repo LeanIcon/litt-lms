@@ -23,6 +23,7 @@ from django.urls import path, include
 from django.conf.urls import url
 from starter.views import signup_view, activate, activation_sent_view, logout_view, home_view, EntSignup
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/signup/', signup_view, name="signup"),
@@ -32,6 +33,11 @@ urlpatterns = [
     path('accounts/logout', logout_view, name="logout"), 
     path('accounts/',include('registration.backends.default.urls')), 
     path('', views.home.as_view()), 
+<<<<<<< HEAD
     path('home/', home_view, name='home'), 
     path('uploads/', include('adminUpload.urls')),
+=======
+    path('', views.home.as_view(), name='home'), 
+    path('', include('littapi.urls')),
+>>>>>>> ba8bf7fc63836a22531740a2c075a04f836e9b33
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'adminUpload.apps.AdminuploadConfig',
     # Third Party
     'crispy_forms',
+    'littapi.apps.LittapiConfig',
+    'rest_framework',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -134,7 +136,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
+    '/static/',
 ]
 # Custom
 # Configure login path
