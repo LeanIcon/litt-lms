@@ -27,17 +27,15 @@ from starter.views import signup_view, activate, activation_sent_view, logout_vi
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/signup/', signup_view, name="signup"),
+    # path('accounts/login/', signup_view, name="login"),
     path('accounts/company/', EntSignup, name="company"),
     path('accounts/sent/', activation_sent_view, name="activation_sent"),
     path('accounts/activate/<slug:uidb64>/<slug:token>/', activate, name='activate'),
     path('accounts/logout', logout_view, name="logout"), 
     path('accounts/',include('registration.backends.default.urls')), 
     path('', views.home.as_view()), 
-<<<<<<< HEAD
     path('home/', home_view, name='home'), 
     path('uploads/', include('adminUpload.urls')),
-=======
     path('', views.home.as_view(), name='home'), 
     path('', include('littapi.urls')),
->>>>>>> ba8bf7fc63836a22531740a2c075a04f836e9b33
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

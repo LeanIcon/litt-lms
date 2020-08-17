@@ -161,7 +161,7 @@ ACCOUNT_ACTIVATION_DAYS = 3
 
 EMAIL_HOST = 'smtp.gmail.com'
 
-EMAIL_HOST_USER = 'dev.picotechnology@gmail.com'
+EMAIL_HOST_USER = '########'
 
 EMAIL_HOST_PASSWORD = '############'
 
