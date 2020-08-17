@@ -173,5 +173,5 @@ EMAIL_PORT = 2525
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # TEST EMAIL SERVER
-# DEFUALT_FROM_EMAIL  = 'curtismensah48@gmail.com'
+# DEFUALT_FROM_EMAIL  = 'your email here'
 

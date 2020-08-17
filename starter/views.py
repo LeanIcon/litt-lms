@@ -92,9 +92,9 @@ def signup_view(request):
             # send_mail(
             #     'subject',
             #     'message',
-            #     'ce_curtismensah@outlook.com',
-            #     ['dev.picotechnology@gmail.com'],
-            #     fail_silently=False, auth_user='ce_curtismensah@outlook.com', auth_password='###########', connection=None
+            #     'your email here',
+            #     ['your email here'],
+            #     fail_silently=False, auth_user='your email here', auth_password='###########', connection=None
             # )
 
 
@@ -144,9 +144,9 @@ def EntSignup(request):
             # send_mail(
             #     'subject',
             #     'message',
-            #     'ce_curtismensah@outlook.com',
-            #     ['dev.picotechnology@gmail.com'],
-            #     fail_silently=False, auth_user='ce_curtismensah@outlook.com', auth_password='###########', connection=None
+            #     'your email here',
+            #     ['your email here'],
+            #     fail_silently=False, auth_user='your email here', auth_password='###########', connection=None
             # )
 
 
