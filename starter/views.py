@@ -13,6 +13,7 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 from .forms import InputForm, SignUpForm, EnterpriseReg
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django.conf import settings
 #Unused
 from django.core.mail import send_mail
 
@@ -76,26 +77,18 @@ def signup_view(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            user.email_user(subject, message)
-            # print('This is from message' + '\n' + user.email(subject, message))
-            print(testbanner)
-            print(user.profile.email)   
+            email_from = settings.EMAIL_HOST_USER
+             
 
             #Test Not working 13-08-YYYY
             send_mail(
                 subject,
                 message,
-                '#######',
+                email_from,
                 [user.profile.email],
                 fail_silently=False
             )
-            # send_mail(
-            #     'subject',
-            #     'message',
-            #     'your email here',
-            #     ['your email here'],
-            #     fail_silently=False, auth_user='your email here', auth_password='###########', connection=None
-            # )
+           
 
 
 
