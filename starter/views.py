@@ -85,7 +85,7 @@ def signup_view(request):
             send_mail(
                 subject,
                 message,
-                'dev.picotechnology@gmail.com',
+                '#######',
                 [user.profile.email],
                 fail_silently=False
             )
@@ -102,7 +102,7 @@ def signup_view(request):
             return redirect('activation_sent')
     else:
         form = SignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form,  'datalist':['username', 'Firstname', 'Lastname', 'Email', 'Password', 'Confirm Password']})
 
 # fix Junk with the signup view
 def EntSignup(request):

@@ -14,12 +14,18 @@ from .models import Profile
 #         model = User
 #         fields = ('username', 'first_name', 'last_name',
 #                   'email', 'password1', 'password2',)
-
+placeholders = {
+    'username': forms.TextInput(attrs={'placeholder': 'username'}),
+    'CompanyName': forms.TextInput(attrs={'placeholder': 'CompanyName'}),
+    'location': forms.TextInput(attrs={'placeholder': 'location'}),
+    'type_of_business': forms.TextInput(attrs={'placeholder': 'type_of_business'}),
+    'Email': forms.TextInput(attrs={'placeholder': 'Email'}),
+}
   
 # creating a form  
 class InputForm(forms.Form): 
   
-    first_name = forms.CharField(max_length = 100) 
+    first_name = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length = 100) 
     username = forms.CharField(max_length = 100) 
     location = forms.CharField(max_length = 200) 
@@ -33,14 +39,15 @@ class InputForm(forms.Form):
 
 # Individual
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=100, help_text='Last Name')
-    last_name = forms.CharField(max_length=100, help_text='Last Name')
-    email = forms.EmailField(max_length=150, help_text='Email')
+    first_name = forms.CharField(max_length=100, help_text='First Name', label='First Name')
+    last_name = forms.CharField(max_length=100, help_text='Last Name', label='Last Name')
+    email = forms.EmailField(max_length=150, help_text='Email', label='Email')
 
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2', ]
+        # widgets = placeholders
 
 
 # Enterprise
@@ -56,3 +63,5 @@ class EnterpriseReg(forms.ModelForm):
         model = Profile
         fields = ['CompanyName', 'location', 'type_of_business',
                   'email', 'password']
+        # widgets = placeholders
+

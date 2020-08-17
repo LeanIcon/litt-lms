@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     # Custom
     'starter',
     'registration',
+    'adminUpload.apps.AdminuploadConfig',
     # Third Party
     'crispy_forms',
+    'littapi.apps.LittapiConfig',
+    'rest_framework',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -133,7 +136,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
+    '/static/',
 ]
 # Custom
 # Configure login path
@@ -142,9 +146,9 @@ LOGIN_REDIRECT_URL = "/home"
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
-MEDIA_ROOT = PROJECT_ROOT + '/static/'
+MEDIA_ROOT = PROJECT_ROOT + '\\static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '\\media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -157,7 +161,7 @@ ACCOUNT_ACTIVATION_DAYS = 3
 
 EMAIL_HOST = 'smtp.gmail.com'
 
-EMAIL_HOST_USER = 'dev.picotechnology@gmail.com'
+EMAIL_HOST_USER = '########'
 
 EMAIL_HOST_PASSWORD = '############'
 
