@@ -128,7 +128,7 @@ def EntSignup(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            comp_form.email_user(subject, message)
+            comp_form.email(subject, message)
             # print('This is from message' + '\n' + user.email(subject, message))
             print(testbanner)
             print(user.profile.email)   

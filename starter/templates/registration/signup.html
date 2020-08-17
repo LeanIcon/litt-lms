@@ -19,7 +19,7 @@
                     </div>
 
                     {% load crispy_forms_tags %}
-                    <form action="" method="POST" name="search-form">
+                    <form action="" method="POST" name="signup-form">
                         {% csrf_token %}
                             <div class="group">
                                 {{form.username | addclass:"inputMaterial"}}
@@ -69,10 +69,10 @@
                         Login
                     </div> -->
                     <!-- Add sign up route here -->
-                    <div class="btn signup_btn" onClick="document.forms['search-form'].submit();">
+                    <div class="btn signup_btn" onClick="document.forms['signup-form'].submit();">
                         Sign Up
                     </div>
-                    <a href="/accouts/login" style="display: block; margin-bottom: 5px;">Already a member?</a>
+                    <a href="/accounts/login" style="display: block; margin-bottom: 5px;">Already a member?</a>
                     <div class="forgot_password">
                         <a href="forgot_password.html">Forgot Password</a>
                     </div>

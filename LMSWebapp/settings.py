@@ -159,15 +159,15 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # Configure SMTP
 ACCOUNT_ACTIVATION_DAYS = 3
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.mailtrap.io'
 
-EMAIL_HOST_USER = '########'
+EMAIL_HOST_USER = 'fe5aa41b665b3f'
 
-EMAIL_HOST_PASSWORD = '############'
+EMAIL_HOST_PASSWORD = '16c0dc72750e78'
 
-EMAIL_PORT = 587
+EMAIL_PORT = 2525
 
-EMAIL_USE_TLS = True
+# EMAIL_USE_TLS = True
 
 # Email activation 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
