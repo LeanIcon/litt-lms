@@ -1,4 +1,4 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 from django.template.loader import render_to_string
 from .token import account_activation_token
@@ -14,6 +14,7 @@ from .forms import InputForm, SignUpForm, EnterpriseReg
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.conf import settings
+from django.utils.html import strip_tags
 #Unused
 from django.core.mail import send_mail
 
@@ -38,6 +39,8 @@ def activation_sent_view(request):
     return render(request, 'registration/activation_sent.html')
 
 def logout_view(request):
+    logout(request)
+    # return redirect('home')
     return render(request, 'registration/logout.html')
 
 
@@ -70,7 +73,7 @@ def signup_view(request):
             user.is_active = False
             user.save()
             current_site = get_current_site(request)
-            subject = 'Please Activate Your Account'
+            subject = 'Please Activate Your LITT LMS Account'
             message = render_to_string('registration/activation_request.html', {
                 'user': user,
                 'domain': current_site.domain,
@@ -79,19 +82,15 @@ def signup_view(request):
             })
             email_from = settings.EMAIL_HOST_USER
              
+            message_body = strip_tags(message)
 
-            #Test Not working 13-08-YYYY
             send_mail(
                 subject,
-                message,
+                message_body,
                 email_from,
                 [user.profile.email],
                 fail_silently=False
             )
-           
-
-
-
             return redirect('activation_sent')
     else:
         form = SignUpForm()
@@ -115,7 +114,7 @@ def EntSignup(request):
             comp_form.save()
             current_site = get_current_site(request)
             subject = 'Please Activate Your Account'
-            message = render_to_string('registration/activation_request.html', {
+            message = render('registration/activation_request.html', {
                 'user': comp_form,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
