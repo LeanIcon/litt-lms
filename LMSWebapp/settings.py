@@ -158,14 +158,14 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Configure SMTP
-ACCOUNT_ACTIVATION_DAYS = 3
+ACCOUNT_ACTIVATION_DAYS = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'company email'
-EMAIL_HOST_PASSWORD = 'company password'
+EMAIL_HOST_USER = 'test.littlms@gmail.com'
+EMAIL_HOST_PASSWORD = 'litt2020'
 
 # EMAIL_USE_TLS = True
 
