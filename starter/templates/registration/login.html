@@ -1,7 +1,76 @@
 {% include 'base.html' %}
+{% load static %}
 <!-- <h2>Login</h2> -->
 {% load form_edit %}
-    <div class="card-body">
+<div id="content-container">
+    <div class="sign_in_page">
+        <div class="row">
+            <div class="image_thumb col">
+                <img src="{% static 'skins/pexels_retha_ferguson_3810788.png' %}" alt="image_thumb">
+            </div>
+
+            <div class="signin-container col">
+                <div class="sign-process a">
+                    <div id="container_title">
+                        <h2>
+                            Signin to LiTT LMS
+                        </h2>
+                    </div>
+
+                    {% load crispy_forms_tags %}
+                    <form action=""  method="POST" name="search-form">
+                        {% csrf_token %}
+                        <!-- <input type="text" placeholder="username" class="input-container"> -->
+                        <!-- <input type="password" placeholder="password" class="input-container"> -->
+                        <div class="group">
+                            <!-- <input class="inputMaterial" type="text" required> -->
+                            {{form.username | addclass:"inputMaterial"}}
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Username</label>
+                        </div>
+                        <div class="group">
+                            <!-- <input class="inputMaterial" type="password" required> -->
+                            {{form.password | addclass:"inputMaterial"}}
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Password</label>
+                        </div>
+                    </form>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div>
+
+                    <div class="btn login_btn"  onClick="document.forms['search-form'].submit();">
+                        Login
+                    </div>
+                    <!-- Add sign up route here -->
+
+                    <div class="btn signup_btn" onclick="location.href='/accounts/signup/'">
+                        Sign Up
+                    </div>
+                    <div class="forgot_password">
+                        <a href="forgot_password.html">Forgot Password</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="footer row">
+            <div class="litt_logo col-4">
+                <img src="{% static 'skins/gh_01_ek2.png'%}" alt="footer logo">
+            </div>
+            <div class="footer-creds col-8">
+                <a href="contactUs.html">Contact</a>
+                <a href="Privacy.html">Privacy</a>
+                <a href="tos.html">Terms of use</a>
+                <a href="Accessibility.html">Accessibility</a>
+                <a href="cookie.html">Cookie Prefrences</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- <div class="card-body">
         {% load crispy_forms_tags %}
         <form class="form-signin" method="POST">
             {% csrf_token %}
@@ -10,9 +79,7 @@
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             <label for="inputEmail" class="sr-only">Email address</label>
             {{form.username | addclass:"form-control"}}
-            <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> -->
             <label for="inputPassword" class="sr-only">Password</label>
-            <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
             {{form.password | addclass:"form-control"}}
             <div class="checkbox mb-3">
                 <label>
@@ -22,8 +89,10 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
         </form>
-    </div>
-        <!-- Welcome All!
+    </div> -->
+        <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> -->
+    <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
+    <!-- Welcome All!
         {% block content %}
     
         {% endblock %}

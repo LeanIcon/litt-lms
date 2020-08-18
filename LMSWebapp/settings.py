@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Custom
     'starter',
     'registration',
+    'adminUpload.apps.AdminuploadConfig',
     # Third Party
     'crispy_forms',
     'littapi.apps.LittapiConfig',
@@ -132,6 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -145,9 +147,9 @@ LOGIN_REDIRECT_URL = "/home"
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
-MEDIA_ROOT = PROJECT_ROOT + '/static/'
+MEDIA_ROOT = PROJECT_ROOT + '\\static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '\\media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -158,15 +160,18 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # Configure SMTP
 ACCOUNT_ACTIVATION_DAYS = 3
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-
-EMAIL_HOST_USER = ''
-
-EMAIL_HOST_PASSWORD = ''
-
-EMAIL_PORT = 587
-
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'company email'
+EMAIL_HOST_PASSWORD = 'company password'
+
+# EMAIL_USE_TLS = True
 
 # Email activation 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# TEST EMAIL SERVER
+# DEFUALT_FROM_EMAIL  = 'your email here'
+
