@@ -240,6 +240,15 @@ blockquote:before{
 	opacity: 0.7;
 }
 
+.cta-image{
+	background-image:url('../img/cta1-background.jpg');
+}
+.cta2-image{
+	background-image:url('../img/cta2-background.jpg');
+}
+.hero-image{
+	background-image:url('../img/home-background.jpg');
+}
 /* --- Buttons --- */
 .main-button {
 	position:relative;
