@@ -3,22 +3,121 @@
 <html lang="en">
 
 <head>
+    <style>
+    .content-container{
+        margin-top: 100px;
+    }
+
+    .activate-content{
+        text-align: center;
+        margin:auto;
+        margin-top: 100px;
+    }
+
+    #countdown-container {
+        display: inline-block; /*displays divs on a line*/
+        width: 300px; /*gives the div element a width of 300px*/
+        margin: 20px 0; /*gives 20px space at the top and bottom of the div element*/
+        border-radius: 5px; /*curves the edges of the div element by 5px;*/
+        background: rgb(134, 15, 15); /*gives the div element a background color*/
+    }
+    #countdown {
+        font-family: "Fira Sans", sans-serif; /*changes the text font in the divelement */
+        display: inline-block; /*displays divs on a line*/
+        padding: 30px; /*creates 30px space between the content of the div element and the walls of the div element*/
+        background: rgb(134, 15, 15);
+        color: white; /*changes the text color in the div element*/
+    }
+
+    #countdown span {
+        font-weight: bold; /*boldens text in the span element*/
+        font-size: 30px; /*changes the text size in the span element*/
+    }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
     <title>LITT LMS</title>
 </head>
 
 <body>
     {% include 'starter/navbar.html' %}
-    <div class="container-fluid">
-        {% block content %}
-        <h3>Activation link sent! Please check your console or mail.</h3>
-        {% endblock content %}
+    <div class="activate-container">
+        <center>
+            <div class="activate-content">
+                <h3>Activation link sent! Please check your email.</h3>
+                <h3>Link Expires In</h3>
+            </div>
+            <div id="countdown-container">
+                <div id="countdown">
+                    <span id="days">0d</span> : <span id="hours">0h</span> :
+                    <span id="minutes">0m</span> : <span id="seconds">0s</span>
+                </div>
+            </div>
+        </center>
+
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let days = 1; //starting number of days
+            let hours = 0; // starting number of hours
+            let minutes = 0; // starting number of minutes
+            let seconds = 0; // starting number of seconds
+
+            // converts all to seconds
+            let totalSeconds =
+                days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds;
+
+            //temporary seconds holder
+            let tempSeconds = totalSeconds;
+
+            // calculates number of days, hours, minutes and seconds from a given number of seconds
+            const convert = (value, inSeconds) => {
+                if (value > inSeconds) {
+                    let x = value % inSeconds;
+                    tempSeconds = x;
+                    return (value - x) / inSeconds;
+                } else {
+                    return 0;
+                }
+            };
+
+            //sets seconds
+            const setSeconds = (s) => {
+                document.querySelector("#seconds").textContent = s + "s";
+            };
+
+            //sets minutes
+            const setMinutes = (m) => {
+                document.querySelector("#minutes").textContent = m + "m";
+            };
+
+            //sets hours
+            const setHours = (h) => {
+                document.querySelector("#hours").textContent = h + "h";
+            };
+
+            //sets Days
+            const setDays = (d) => {
+                document.querySelector("#days").textContent = d + "d";
+            };
+
+            // Update the count down every 1 second
+            var x = setInterval(() => {
+                //clears countdown when all seconds are counted
+                if (totalSeconds <= 0) {
+                    clearInterval(x);
+                }
+                setDays(convert(tempSeconds, 24 * 60 * 60));
+                setHours(convert(tempSeconds, 60 * 60));
+                setMinutes(convert(tempSeconds, 60));
+                setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
+                totalSeconds--;
+                tempSeconds = totalSeconds;
+            }, 1000);
+    </script>
 </body>
 
 </html>
