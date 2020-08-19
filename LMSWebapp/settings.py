@@ -133,6 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -157,21 +158,20 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Configure SMTP
-ACCOUNT_ACTIVATION_DAYS = 3
+ACCOUNT_ACTIVATION_DAYS = 1
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-
-EMAIL_HOST_USER = 'fe5aa41b665b3f'
-
-EMAIL_HOST_PASSWORD = '16c0dc72750e78'
-
-EMAIL_PORT = 2525
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'test.littlms@gmail.com'
+EMAIL_HOST_PASSWORD = 'litt2020'
 
 # EMAIL_USE_TLS = True
 
 # Email activation 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # TEST EMAIL SERVER
-# DEFUALT_FROM_EMAIL  = 'curtismensah48@gmail.com'
+# DEFUALT_FROM_EMAIL  = 'your email here'
 

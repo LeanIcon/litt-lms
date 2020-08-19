@@ -36,6 +36,6 @@ urlpatterns = [
     path('', views.home.as_view()), 
     path('home/', home_view, name='home'), 
     path('uploads/', include('adminUpload.urls')),
-    path('', views.home.as_view(), name='home'), 
+    path('home/', views.home.as_view(), name='home'), 
     path('', include('littapi.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
