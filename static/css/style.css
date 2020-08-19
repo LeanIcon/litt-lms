@@ -3,7 +3,7 @@
 
 body{
     width: 100%;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
 }
 
 .navbar{
@@ -147,7 +147,7 @@ form input{
 
 /* LABEL ======================================= */
 
-label 				 {
+label{
   color:#999; 
   font-size:14px;
   font-weight:normal;
@@ -162,10 +162,10 @@ label 				 {
 }
 
 /* active state */
-.inputMaterial:focus ~ label, .inputMaterial:valid ~ label 	{
+.inputMaterial:focus ~ label, .inputMaterial:valid ~ label{
   top:-20px;
   font-size:14px;
-  color: rgb(134, 15, 15);;
+  color: rgb(134, 15, 15);
 }
 
 /* BOTTOM BARS ================================= */

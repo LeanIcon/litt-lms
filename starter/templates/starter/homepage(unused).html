@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>LITT LMS</title>
+</head>
+<body>
+    {% include 'starter/navbar.html' %}
+    <div class="container-fluid">
+        {% block content %}
+            <h2>Home Page</h2>
+            <h4>Welcome {{user.username}} </h4>
+        {% endblock content %} 
+        {% if user.username == 'admin'%}
+           <!-- Admin dashboard redirect  -->
+           <button class="btn btn" href="google.com">Welcome to the admin dashboard</button>
+        {% endif %}   
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

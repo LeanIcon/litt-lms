@@ -1,22 +1,20 @@
-from django.contrib.auth import login, authenticate, logout
-from .forms import SignUpForm
-from django.template.loader import render_to_string
-from .token import account_activation_token
-from django.utils.http import urlsafe_base64_encode
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_decode
-from django.db import IntegrityError
-from django.contrib.auth.models import User
-from django.utils.encoding import force_text
-from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-from .forms import InputForm, SignUpForm, EnterpriseReg
-from django.shortcuts import render
-from django.views.generic.base import TemplateView
 from django.conf import settings
-from django.utils.html import strip_tags
-#Unused
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
+
 from django.core.mail import send_mail
+from django.db import IntegrityError
+from django.shortcuts import (HttpResponseRedirect, get_object_or_404,
+                              redirect, render)
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_text
+from django.utils.html import strip_tags
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.views.generic.base import TemplateView
+
+from .forms import EnterpriseReg, InputForm, SignUpForm
+from .token import account_activation_token
 
 # Create your views here
 
