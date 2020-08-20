@@ -127,7 +127,7 @@ def EntSignup(request):
             send_mail(
                 subject,
                 message,
-                'dev.picotechnology@gmail.com',
+                '############',
                 [user.profile.email],
                 fail_silently=False
             )
