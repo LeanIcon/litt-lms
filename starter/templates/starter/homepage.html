@@ -13,10 +13,10 @@
 		<!-- integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 	<!-- <link rel="stylesheet" href="style.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="/starter/templates/style.css"> -->
-	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/static/css/style.css">
-	<link rel="stylesheet" href="/static/css/main.css">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<title>LITT LMS</title>
 </head>
 	<body>
@@ -111,7 +111,7 @@
 					</div>
 					<div class="employee col-md-6 pop-content">
 						<h3>Sign up as an employee</h3>
-						<div class="btn pop-btn"onclick="location.href='/accounts/signup/'">
+						<div class="btn pop-btn" onclick="location.href='/accounts/signup/'">
 							Sign Up
 						</div>
 					</div>
@@ -511,7 +511,7 @@
 				<div class="row">
 
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<h2 class="white-text" onclick="location.href='https:leanicontechnology.com/'"></h2>>Contact Us</h2>
+						<!--h2 class="white-text" onclick="location.href='https:leanicontechnology.com/'"></h2>>Contact Us</h2>
 						
 						<!--p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.-->
 						<a class="main-button icon-button" href="https://leanicontechnology.com/">Contact Us Now</a>
@@ -526,6 +526,7 @@
 		</div>
 		<!-- /Contact CTA -->
 
+		{% include 'starter/footer.html' %}
 		<!-- preloader -->
 		<!-- <div id='preloader'><div class='preloader'></div></div> -->
 		<!-- /preloader -->

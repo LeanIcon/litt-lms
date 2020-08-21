@@ -25,7 +25,7 @@ SECRET_KEY = 'r#7ix0smeyty9@h15qv9n!4m*beue$^t0r3zhf!z!1^1t_z397'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['litt-lms.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -154,7 +153,7 @@ MEDIA_URL = '\\media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # print(STATIC_ROOT)
 
 
@@ -175,9 +174,4 @@ EMAIL_HOST_PASSWORD = 'litt2020'
 
 # TEST EMAIL SERVER
 # DEFUALT_FROM_EMAIL  = 'your email here'
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
 
