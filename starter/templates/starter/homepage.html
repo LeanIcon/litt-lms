@@ -21,7 +21,63 @@
 </head>
 	<body>
 
-		{% include 'starter/navbar.html' %}
+		
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/main.css">
+<!-- Header -->
+<header id="header" class="transparent-nav">
+    <div class="container">
+
+        <div class="navbar-header">
+            <!-- Logo -->
+            <div class="navbar-brand">
+                <a class="logo" href="index.html">
+                    <img src="/static/img/littlogo.png" alt="logo">
+                </a>
+            </div>
+            <!-- /Logo -->
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggle">
+                <span></span>
+            </button>
+            <!-- /Mobile toggle -->
+        </div>
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <ul class="main-menu nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- change  -->
+                <!-- <button onclick="togglePopup()">Show Popup</button> -->
+                
+                    <li><a  href="/accounts/login">Sign In</a></li>
+                
+            </ul>
+        </nav>
+        <!-- /Navigation -->
+
+    </div>
+</header>
+<!-- /Header -->
+<!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal text-white">LITT LMS</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-white" href="#">Features</a>
+        <a class="p-2 text-white" href="#">Enterprise</a>
+        <a class="p-2 text-white" href="#">Support</a>
+        <a class="p-2 text-white" href="#">Pricing</a>
+        
+        <a class="btn btn-outline-primary" href="/accounts/login">Sign In</a>
+        <a class="btn btn-outline-success" href="/accounts/signup">Sign Up</a>
+        
+    </nav>
+</div> -->
 		<!-- Home -->
 		<div id="home" class="hero-area">
 
@@ -33,8 +89,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<h1 class="white-text">Lean Icon Agile Training</h1>
-							<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant, eu pro alii error homero.</p>
+							<h1 class="white-text">LEAN ICON AGILE TRAINING</h1>
+							<p class="lead white-text">Learn to Successfully Put Agile Practices Into Action. Improve your Ability to Plan, Manage & Lead in Your Project Teams with Agile</p>
 							<a class="main-button icon-button" onclick="togglePopup()" style="cursor: pointer;">Get Started!</a>
 						</div>
 					</div>
@@ -49,7 +105,7 @@
 				<div class="row">
 					<div class="individual col-md-6 pop-content">
 						<h3>Sign up as individual</h3>
-						<div class="btn pop-btn" href="/accounts/signup">
+						<div class="btn pop-btn" onclick="location.href='/accounts/signup'">
 							Sign Up
 						</div>
 					</div>
@@ -59,10 +115,111 @@
 							Sign Up
 						</div>
 					</div>
-					<a href="">Already a member? Login</a>
+					<a onclick="location.href='/accounts/login/'">Already a member? Login</a>
+					<!-- <div class="organization col-md-4 pop-content">
+						<h4>Sign up as an organization</h4>
+						<div class="pop-btn">
+							Sign Up
+						</div>
+					</div> -->
+					<!-- <h1>Sign Up Now</h1>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aspernatur laborum rem sed laudantium excepturi
+						veritatis voluptatum architecto, dolore quaerat totam officiis nisi animi accusantium alias inventore nulla
+						atque debitis.</p> -->
+
 				</div>
 			</div>
 		</div>
+		<!-- Courses -->
+		<div id="courses" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+					<div class="section-header text-center">
+						<h2>Explore Courses</h2>
+						<p class="lead">Learn the several paths to a successful agility.</p>
+					</div>
+				</div>
+				<!-- /row -->
+
+				<!-- courses -->
+				<div id="courses-wrapper">
+
+					<!-- row -->
+					<div class="row">
+
+						<!-- single course -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="course">
+								<a href="#" class="course-img">
+									<img src="/static/img/course01.jpg" alt="">
+									<i class="course-link-icon fa fa-link"></i>
+								</a>
+								<a href='/accounts/signup/'>Agile Leadership</a>
+								<div class="course-details">
+									<!--span class="course-category">Business-->
+									<!--span class="course-price course-free">-->
+								</div>
+							</div>
+						</div>
+						<!-- /single course -->
+
+						<!-- single course -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="course">
+								<a href="#" class="course-img">
+									<img src="/static/img/course02.jpg" alt="">
+									<i class="course-link-icon fa fa-link"></i>
+								</a>
+								<a class="course-title" href="#">Agile Software Engineering </a>
+								<div class="course-details">
+									<!--span class="course-category">Development-->
+									<!--span class="course-price course-premium">Premium-->
+								</div>
+							</div>
+						</div>
+						<!-- /single course -->
+
+						<!-- single course -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="course">
+								<a href="#" class="course-img">
+									<img src="/static/img/course03.jpg" alt="">
+									<i class="course-link-icon fa fa-link"></i>
+								</a>
+								<a class="course-title" href="#">Agile Human Resource Management | From Beginner To Advanced</a>
+								<div class="course-details">
+									<!--span class="course-category">Productivity-->
+									<!--span class="course-price course-premium">Premium-->
+								</div>
+							</div>
+						</div>
+						<!-- /single course -->
+
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="course">
+								<a href="#" class="course-img">
+									<img src="/static/img/course04.jpg" alt="">
+									<i class="course-link-icon fa fa-link"></i>
+								</a>
+								<a class="course-title" href="#">Agile Management</a>
+								<div class="course-details">
+									<!--span class="course-category">Development-->
+									<!--span class="course-price course-free">Free-->
+								</div>
+							</div>
+						</div>
+						<!-- /single course -->
+
+					</div>
+					<!-- /row -->
+
+
+				</div>
+				<!-- /courses -->
 		
 		<!-- <button onclick="togglePopup()">Show Popup</button> -->
 		<!-- /Home -->
@@ -79,7 +236,8 @@
 					<div class="col-md-6">
 						<div class="section-header">
 							<h2>Welcome to LiTT LMS</h2>
-							<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+							<!--p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.-->
+
 						</div>
 
 						<!-- feature -->
@@ -87,7 +245,7 @@
 							<i class="feature-icon fa fa-flask"></i>
 							<div class="feature-content">
 								<h4>Online Courses </h4>
-								<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+								<p>Gain new skills and earn a certificate of completion.</p>
 							</div>
 						</div>
 						<!-- /feature -->
@@ -96,8 +254,8 @@
 						<div class="feature">
 							<i class="feature-icon fa fa-users"></i>
 							<div class="feature-content">
-								<h4>Expert Teachers</h4>
-								<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+								<h4>Expert Coaches</h4>
+								<p>learn with like-minded experts.</p>
 							</div>
 						</div>
 						<!-- /feature -->
@@ -107,7 +265,7 @@
 							<i class="feature-icon fa fa-comments"></i>
 							<div class="feature-content">
 								<h4>Agile Community</h4>
-								<p>Join a team of agile minded experts</p>
+								<p onclick="location.href='/accounts/signup/'">Join a team of agile minded experts</p>
 							</div>
 						</div>
 						<!-- /feature -->
@@ -116,7 +274,7 @@
 
 					<div class="col-md-6">
 						<div class="about-img">
-							<img src="{% static 'img/about.png' %}" alt="">
+							<img src="/static/img/about.png" alt="">
 						</div>
 					</div>
 
@@ -129,13 +287,13 @@
 		<!-- /About -->
 
 		<!-- Courses -->
-		<div id="courses" class="section">
+		<!--div id="courses" class="section">
 
 			<!-- container -->
-			<div class="container">
+			<!--div class="container">
 
 				<!-- row -->
-				<div class="row">
+				<!--div class="row">
 					<div class="section-header text-center">
 						<h2>Explore Courses</h2>
 						<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
@@ -144,16 +302,16 @@
 				<!-- /row -->
 
 				<!-- courses -->
-				<div id="courses-wrapper">
+				<!--div id="courses-wrapper">
 
 					<!-- row -->
-					<div class="row">
+					<!--div class="row">
 
 						<!-- single course -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
+						<!--div class="col-md-3 col-sm-6 col-xs-6">
 							<div class="course">
 								<a href="#" class="course-img">
-									<img src="{% static 'img/course01.jpg' %}" alt="">
+									<img src="/static/img/course01.jpg" alt="">
 									<i class="course-link-icon fa fa-link"></i>
 								</a>
 								<a class="course-title" href="#">Beginner to Pro in Design Thinking</a>
@@ -166,10 +324,10 @@
 						<!-- /single course -->
 
 						<!-- single course -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
+						<!--div class="col-md-3 col-sm-6 col-xs-6">
 							<div class="course">
 								<a href="#" class="course-img">
-									<img src="{% static 'img/course02.jpg' %}" alt="">
+									<img src="/static/img/course02.jpg" alt="">
 									<i class="course-link-icon fa fa-link"></i>
 								</a>
 								<a class="course-title" href="#">Introduction Agile Framework </a>
@@ -182,10 +340,10 @@
 						<!-- /single course -->
 
 						<!-- single course -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
+						<!--div class="col-md-3 col-sm-6 col-xs-6">
 							<div class="course">
 								<a href="#" class="course-img">
-									<img src="{% static 'img/course03.jpg' %}" alt="">
+									<img src="/static/img/course03.jpg" alt="">
 									<i class="course-link-icon fa fa-link"></i>
 								</a>
 								<a class="course-title" href="#">The Ultimate Use of Agile Tools | From Beginner To Advanced</a>
@@ -197,10 +355,10 @@
 						</div>
 						<!-- /single course -->
 
-						<div class="col-md-3 col-sm-6 col-xs-6">
+						<!--div class="col-md-3 col-sm-6 col-xs-6">
 							<div class="course">
 								<a href="#" class="course-img">
-									<img src="{% static 'img/course04.jpg' %}" alt="">
+									<img src="/static/img/course04.jpg" alt="">
 									<i class="course-link-icon fa fa-link"></i>
 								</a>
 								<a class="course-title" href="#">The Complete Agile Training</a>
@@ -212,16 +370,16 @@
 						</div>
 						<!-- /single course -->
 
-					</div>
+					<!--/div>
 					<!-- /row -->
 
 
-				</div>
+				<!--/div>
 				<!-- /courses -->
 
 				<div class="row">
 					<div class="center-btn">
-						<a class="main-button icon-button" href="#">More Courses</a>
+						<!--a class="main-button icon-button" href="#">More Courses-->
 					</div>
 				</div>
 
@@ -245,8 +403,8 @@
 				<div class="row">
 
 					<div class="col-md-6">
-						<h2 class="white-text">Ceteros fuisset mei no, soleat epicurei adipiscing ne vis.</h2>
-						<p class="lead white-text">Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+						<h2 class="white-text">Agile Training.</h2>
+						<p class="lead white-text">Agile training is a way to improve project performance by teaching the basic concepts of Agile to an organization or team and how to implement it. ... Training can help expose the underlying Agile concepts and clarify the differences between the various implementation methods..</p>
 						<a class="main-button icon-button" href="#">Get Started!</a>
 					</div>
 
@@ -267,13 +425,13 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="section-header text-center">
-						<h2>Why liTT</h2>
-						<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+					<!--div class="section-header text-center">
+						<h2>Why LITT</h2>
+						<p class="lead">In everything we do, what we care about is making human lives better through  continuous  personal growth and we believe together we can drive it through the LITT LMS.</p>
 					</div>
 
 					<!-- feature -->
-					<div class="col-md-4">
+					<!--div class="col-md-4">
 						<div class="feature">
 							<i class="feature-icon fa fa-flask"></i>
 							<div class="feature-content">
@@ -285,7 +443,7 @@
 					<!-- /feature -->
 
 					<!-- feature -->
-					<div class="col-md-4">
+					<!--div class="col-md-4">
 						<div class="feature">
 							<i class="feature-icon fa fa-users"></i>
 							<div class="feature-content">
@@ -297,7 +455,7 @@
 					<!-- /feature -->
 
 					<!-- feature -->
-					<div class="col-md-4">
+					<!--div class="col-md-4">
 						<div class="feature">
 							<i class="feature-icon fa fa-comments"></i>
 							<div class="feature-content">
@@ -305,7 +463,7 @@
 								<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
 							</div>
 						</div>
-					</div>
+					<!--/div>
 					<!-- /feature -->
 
 				</div>
@@ -317,9 +475,9 @@
 				<div class="row">
 
 					<div class="col-md-6">
-						<h3>Persius imperdiet incorrupte et qui, munere nusquam et nec.</h3>
-						<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-						<p>No vel facete sententiae, quodsi dolores no quo, pri ex tamquam interesset necessitatibus. Te denique cotidieque delicatissimi sed. Eu doming epicurei duo. Sit ea perfecto deseruisse theophrastus. At sed malis hendrerit, elitr deseruisse in sit, sit ei facilisi mediocrem.</p>
+						<h2>WHY LITT LMS...</h2>
+						<!--p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.-->
+						<p>In everything we do, what we care about is making human lives better through continuous personal growth and we believe together we can drive it through the LITT LMS.</p>
 					</div>
 
 					<div class="col-md-5 col-md-offset-1">
@@ -353,9 +511,10 @@
 				<div class="row">
 
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<h2 class="white-text">Contact Us</h2>
-						<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-						<a class="main-button icon-button" href="#">Contact Us Now</a>
+						<!--h2 class="white-text" onclick="location.href='https:leanicontechnology.com/'"></h2>>Contact Us</h2>
+						
+						<!--p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.-->
+						<a class="main-button icon-button" href="https://leanicontechnology.com/">Contact Us Now</a>
 					</div>
 
 				</div>
@@ -374,10 +533,11 @@
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<!-- jQuery Plugins -->
-	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/main.js"></script>
 
 
 	</body>
 </html>
+
