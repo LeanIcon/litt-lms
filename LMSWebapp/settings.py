@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 # import dj_database_url
-from dj_database_url import parse as dburl
+# from dj_database_url import parse as dburl
+from dj_database_url
 from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['https://littlmstest.herokuapp.com/']
 
@@ -103,8 +104,24 @@ WSGI_APPLICATION = 'LMSWebapp.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES = {'default': config(
-    'DATABASE_URL', default="'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')", cast=dburl), }
+# DATABASES = {'default': config(
+#     'DATABASE_URL', default="'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')", cast=dburl), }
+
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=False, cast=bool)
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
+# }
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 # DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
@@ -148,27 +165,37 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    '/static/',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+#     '/static/',
+# ]
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
 # Custom
 # Configure login path
 
 LOGIN_REDIRECT_URL = "/home"
 
-PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+# PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-MEDIA_ROOT = PROJECT_ROOT + '\\static/'
+# MEDIA_ROOT = PROJECT_ROOT + '\\static/'
 
-MEDIA_URL = '\\media/'
+# MEDIA_URL = '\\media/'
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_URL = '/media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # print(STATIC_ROOT)
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
 # Configure SMTP

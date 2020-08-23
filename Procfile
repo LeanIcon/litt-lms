@@ -1,3 +1,3 @@
 
 
-web: gunicorn LMSWebapp.wsgi
+web: gunicorn LMSWebapp.wsgi --log-file -
