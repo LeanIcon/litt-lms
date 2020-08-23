@@ -1,1 +1,1 @@
-web: gunicorn litt-lms.wsgi
+web: gunicorn litt-lms.wsgi --log-file -
