@@ -189,5 +189,5 @@ EMAIL_HOST_PASSWORD = 'litt2020'
 # TEST EMAIL SERVER
 # DEFUALT_FROM_EMAIL  = 'your email here'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
