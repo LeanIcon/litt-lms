@@ -169,6 +169,7 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'static'),
 #     '/static/',
 # ]
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
@@ -180,7 +181,7 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = "/home"
 
 # PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 
 # MEDIA_ROOT = PROJECT_ROOT + '\\static/'
 
