@@ -4,5 +4,6 @@ Lib/
 Scripts/
 pyvenv.cfg
 local_settings.py
+myenv
 
 # .gitignore
