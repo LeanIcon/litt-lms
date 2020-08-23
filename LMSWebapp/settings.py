@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
-import dj_database_url
+# import dj_database_url
+from dj_database_url import parse as dburl
+from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,12 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r#7ix0smeyty9@h15qv9n!4m*beue$^t0r3zhf!z!1^1t_z397'
+# SECRET_KEY = 'r#7ix0smeyty9@h15qv9n!4m*beue$^t0r3zhf!z!1^1t_z397'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://littlmstest.herokuapp.com/']
 
 
 # Application definition
@@ -92,14 +95,18 @@ WSGI_APPLICATION = 'LMSWebapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {'default': config(
+    'DATABASE_URL', default=default_dburl, cast=dburl), }
+
+DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 
 # Password validation
@@ -160,6 +167,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # print(STATIC_ROOT)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Configure SMTP
