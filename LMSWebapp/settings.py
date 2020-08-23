@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'LMSWebapp.wsgi.application'
 DATABASES = {'default': config(
     'DATABASE_URL', default="'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')", cast=dburl), }
 
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
+# DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 
 # Password validation
