@@ -176,9 +176,9 @@ STATIC_URL = '/static/'
 # ]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+#STATICFILES_DIRS = (
+   # os.path.join(PROJECT_ROOT, 'static'),
+#)
 
 # Custom
 # Configure login path
@@ -201,7 +201,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_ROOT = ("path/to/static_root")
+#STATIC_ROOT = ("path/to/static_root")
 
 # Configure SMTP
 ACCOUNT_ACTIVATION_DAYS = 1
