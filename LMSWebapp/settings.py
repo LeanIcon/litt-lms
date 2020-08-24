@@ -200,8 +200,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # print(STATIC_ROOT)
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = ("path/to/static_root")
 
 # Configure SMTP
 ACCOUNT_ACTIVATION_DAYS = 1
@@ -222,4 +222,12 @@ EMAIL_HOST_PASSWORD = 'litt2020'
 # DEFUALT_FROM_EMAIL  = 'your email here'
 
 # django_heroku.settings(locals())
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, 'static'),
+)
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
+STATIC_URL = '/static/'
